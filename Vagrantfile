@@ -80,9 +80,9 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", inline: <<-SHELL
     sudo aptitude update
     sudo aptitude install -y kpartx qemu-user-static parted
-    git clone https://github.com/snazzybunny/treehouse-builder.git
+    git clone https://github.com/kanishk1010/treehouse-builder.git
+    git pull origin snazzybunnyfix
     cd treehouse-builder/
-    git pull origin autosshwifitest
     mkdir -p /vagrant/images
     ln -s /vagrant/images images
     sudo -u vagrant screen -dmS build sudo bash -c 'export PATH="$PATH:/sbin:/usr/sbin";cd /home/vagrant/treehouse-builder;./treehouse-builder --chroot'
